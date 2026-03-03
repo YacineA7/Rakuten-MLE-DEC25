@@ -164,3 +164,7 @@ cython_debug/
 
 # Data folder
 data/
+
+#Copilot
+.github/copilot-instructions.md
+
