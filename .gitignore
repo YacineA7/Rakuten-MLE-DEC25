@@ -162,8 +162,8 @@ cython_debug/
 # VSCode configuration files
 .vscode/
 
-# Data folder
-data/
+# Data images folder
+data/images/
 
 #Copilot
 .github/copilot-instructions.md
