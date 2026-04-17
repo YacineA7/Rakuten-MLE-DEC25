@@ -54,16 +54,3 @@ with col2:
         "- Expliquer le meilleur modèle\n"
         "- Démontrer une application métier concrète"
     )
-
-st.markdown("## Fil conducteur du projet")
-steps = st.columns(5)
-texts = [
-    ("1. Comprendre", "Contexte, données, enjeu métier"),
-    ("2. Explorer", "Biais, manquants, distributions, images"),
-    ("3. Préparer", "Nettoyage texte, traitement image, vectorisation"),
-    ("4. Modéliser", "KNN, NB, SVM, XGBoost, EfficientNetB0"),
-    ("5. Valoriser", "Démo, interprétabilité, PoC métier"),
-]
-for col, (title, desc) in zip(steps, texts):
-    with col:
-        st.metric(title, desc, "")

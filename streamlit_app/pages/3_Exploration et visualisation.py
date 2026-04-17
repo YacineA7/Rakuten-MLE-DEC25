@@ -7,15 +7,6 @@ ROOT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = ROOT_DIR.parent.parent
 FIGURES_DIR = PROJECT_ROOT / "reports" / "figures"
 
-st.title("📊 Analyse exploratoire des données")
-st.write(
-    "Cette page centralise les visualisations d'exploration du projet Rakuten. "
-    "Les figures sont chargées automatiquement depuis le dossier `reports/figures` du dépôt."
-)
-
-st.info(
-    f"Dossier attendu pour les visualisations : `{FIGURES_DIR.as_posix()}`"
-)
 
 TEXT_VIZ = [
     ("viz_txt_distrib_prdtycope.png", "Distribution des catégories", "Met en évidence le déséquilibre de classes, ce qui justifie l'usage du F1-score pondéré."),
@@ -67,39 +58,8 @@ st.markdown("## Visualisations image")
 for filename, title, comment in IMAGE_VIZ:
     show_figure(FIGURES_DIR / filename, title, comment)
 
-# st.markdown("## Visualisations complémentaires disponibles")
-# extra_figs = [
-#     "viz_txt_KNN_confusion.png",
-#     "viz_txt_NB_confusion.png",
-#     "viz_txt_NBOpt_confusion.png",
-#     "viz_txt_SVM_confusion.png",
-#     "viz_txt_SVMOpt_confusion.png",
-#     "viz_txt_XGB_confusion.png",
-#     "viz_img_ENB_confusion.png",
-#     "viz_img_ENB_courbes.png",
-#     "lime_knn_interpretation.png",
-#     "lime_NB_interpretation.png",
-#     "lime_SVM_interpretation.png",
-#     "lime_XGB_interpretation.png",
-#     "gradcam_ENB_interpretation.png",
-# ]
-
-# existing_extra = [name for name in extra_figs if (FIGURES_DIR / name).exists()]
-# missing_extra = [name for name in extra_figs if not (FIGURES_DIR / name).exists()]
-
-# if existing_extra:
-#     st.success("Figures complémentaires détectées dans `reports/figures`.")
-#     st.code("\n".join(existing_extra))
-# else:
-#     st.warning("Aucune figure complémentaire détectée pour le moment.")
-
-# with st.expander("Afficher la liste des figures complémentaires attendues"):
-#     st.code("\n".join(extra_figs))
-#     if missing_extra:
-#         st.caption("Fichiers encore absents ou non trouvés dans l'arborescence courante.")
-
 st.markdown("## Lecture métier")
 st.write(
-    "L'EDA montre que la performance des modèles dépend autant de la richesse du texte que de la qualité du catalogage initial. "
+    "L'exploration montre que la performance des modèles dépend autant de la richesse du texte que de la qualité du catalogage initial. "
     "Les visualisations confirment que le texte porte l'essentiel du signal discriminant, tandis que l'image fournit une information complémentaire utile pour certaines familles de produits."
 )

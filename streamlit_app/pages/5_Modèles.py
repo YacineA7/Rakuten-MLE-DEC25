@@ -10,9 +10,30 @@ FIGURES_DIR = PROJECT_ROOT / "reports" / "figures"
 
 st.title("🤖 Modèles entraînés et résultats")
 st.write(
-    "La modélisation a été construite par étapes, avec des baselines texte, des modèles optimisés et un modèle deep learning sur images. "
-    "Les matrices de confusion sont chargées automatiquement depuis `reports/figures`."
-)
+    "La modélisation a été construite par étapes, avec des baselines texte, des modèles optimisés et un modèle deep learning sur les images. "
+    "Cette page présente une synthèse des performances, une lecture détaillée par famille de modèles et une analyse des matrices de confusion.")
+
+
+st.markdown("##  Stratégie progressive de modélisation")
+col1, col2, col3 = st.columns(3)
+with col1:
+    st.markdown(
+        "### Baselines\n"
+        "- **KNN** : utile comme point de comparaison, mais peu adapté à un espace TF-IDF très dimensionnel.\n" 
+        "- **Naive Bayes** : rapide et simple, mais limité par son hypothèse d'indépendance."
+    )
+with col2:
+    st.markdown(
+        "### Modèles optimisés\n"
+        "- **SVM linéaire** : très performant sur texte et intéressant pour l'interprétabilité.\n"
+        "- **XGBoost** : meilleur score global grâce à une modélisation plus complexe des interactions."
+    )
+with col3:
+    st.markdown(
+        "### Deep Learning\n"
+        "- **EfficientNetB0** : apporte une vraie valeur sur l'image, avec 77% d'accuracy.\n"
+        "- Le résultat est d'autant plus intéressant que l'entraînement a été limité par les ressources machines."
+    )
 
 st.subheader("Synthèse des performances")
 results_df = pd.DataFrame(
@@ -32,32 +53,12 @@ results_df = pd.DataFrame(
         ],
     }
 )
+
 st.dataframe(results_df, use_container_width=True, hide_index=True)
 
 st.info(
     "La métrique principale retenue est le **F1-score pondéré**, car le problème est multiclasse et déséquilibré."
 )
-
-st.markdown("## Lecture par famille de modèles")
-col1, col2, col3 = st.columns(3)
-with col1:
-    st.markdown(
-        "### Baselines\n"
-        "- **KNN** : utile comme point de comparaison, mais peu adapté à un espace TF-IDF très dimensionnel.\n"
-        "- **Naive Bayes** : rapide et simple, mais limité par son hypothèse d'indépendance."
-    )
-with col2:
-    st.markdown(
-        "### Modèles optimisés\n"
-        "- **SVM linéaire** : très performant sur texte et intéressant pour l'interprétabilité.\n"
-        "- **XGBoost** : meilleur score global grâce à une modélisation plus complexe des interactions."
-    )
-with col3:
-    st.markdown(
-        "### Deep Learning\n"
-        "- **EfficientNetB0** : apporte une vraie valeur sur l'image, avec 77% d'accuracy.\n"
-        "- Le résultat est d'autant plus intéressant que l'entraînement a été limité par les ressources machines."
-    )
 
 
 def show_confusion_matrix(filename: str, title: str, comment: str):

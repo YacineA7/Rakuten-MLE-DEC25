@@ -29,7 +29,7 @@ summary_df = pd.DataFrame(
             "27",
             "60 Mo",
             "2.2 Go",
-            "JPEG RGB 500x500",
+            "JPG RGB 500x500",
             "Français (~82% sur l'échantillon étudié)",
         ],
     }

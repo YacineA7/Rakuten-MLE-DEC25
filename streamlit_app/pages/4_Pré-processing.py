@@ -14,7 +14,7 @@ with tab1:
     st.subheader("Pipeline texte")
     text_df = pd.DataFrame(
         {
-            "Étape": [
+            "Étapes": [
                 "Suppression HTML",
                 "Suppression URLs",
                 "Normalisation espaces",
@@ -35,7 +35,7 @@ with tab2:
     st.subheader("Pipeline image")
     image_df = pd.DataFrame(
         {
-            "Étape": [
+            "Étapes": [
                 "Lecture des métadonnées",
                 "Reconstruction du chemin image",
                 "Redimensionnement en 224x224",

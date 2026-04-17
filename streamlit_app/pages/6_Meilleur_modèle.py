@@ -80,13 +80,6 @@ st.caption(
     "Grad-CAM met en évidence les zones de l'image qui influencent le plus la prédiction d'EfficientNetB0."
 )
 
-st.markdown("## Lecture métier")
-st.write(
-    "L'interprétabilité est essentielle pour transformer un bon score en solution crédible. "
-    "LIME aide à expliquer pourquoi un texte a conduit à une catégorie donnée, tandis que Grad-CAM montre ce que le modèle image regarde réellement. "
-    "Ensemble, ces outils renforcent la confiance dans les prédictions et facilitent leur appropriation dans un cadre métier."
-)
-
 st.markdown("## Conclusion opérationnelle")
 st.success(
     "Le meilleur modèle actuel est XGBoost sur texte, mais la présence d'un signal image interprétable ouvre naturellement vers une future architecture multimodale plus robuste."

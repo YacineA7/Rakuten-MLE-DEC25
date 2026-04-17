@@ -53,25 +53,6 @@ def safe_predict_image(model, label_encoder, img_array):
     ]
     return label, top_classes
 
-
-# st.title("🧪 Démonstration des modèles")
-
-# st.markdown("## Vérification des artefacts")
-# expected_files = [
-#     IMAGE_MODEL_FILE,
-#     VECTORIZER_FILE,
-#     LABEL_ENCODER_FILE,
-#     *TEXT_MODEL_FILES.values(),
-# ]
-# cols = st.columns(3)
-# for i, file_name in enumerate(expected_files):
-#     path = MODELS_DIR / file_name
-#     with cols[i % 3]:
-#         if path.exists():
-#             st.success(f"✔ {file_name}")
-#         else:
-#             st.error(f"✘ {file_name}")
-
 vectorizer = None
 label_encoder = None
 if (MODELS_DIR / VECTORIZER_FILE).exists() and (MODELS_DIR / LABEL_ENCODER_FILE).exists():
@@ -169,8 +150,3 @@ else:
             st.dataframe(rows, use_container_width=True, hide_index=True)
             st.markdown("### Texte après préprocessing")
             st.code(processed_text, language="text")
-
-st.info(
-    "Les scripts du projet montrent une logique de préprocessing commune : nettoyage HTML/URLs/ponctuation/chiffres, suppression des stopwords, concaténation des champs texte, TF-IDF côté texte et redimensionnement 224x224 + preprocess_input côté image. "
-    "Le stemming a été exposé comme option car il apparaît dans certains scripts, tandis que d'autres injectent `textnostop` dans TF-IDF."
-)

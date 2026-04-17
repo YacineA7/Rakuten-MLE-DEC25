@@ -7,14 +7,29 @@ st.write(
     "Le projet démontre la faisabilité de la classification automatique de produits e-commerce à partir de données multimodales."
 )
 
-st.subheader("Ce que l'on retient")
-st.markdown(
-    "- Le **texte** est la modalité la plus discriminante dans le cadre étudié\n"
-    "- **XGBoost** est le meilleur modèle global parmi ceux testés\n"
-    "- Les **images** apportent une valeur complémentaire réelle\n"
-    "- Le déséquilibre de classes peut être correctement géré avec un **F1-score pondéré**\n"
-    "- La qualité des données reste un levier majeur d'amélioration"
-)
+
+left, right = st.columns(2, gap="large")
+with left:
+    st.subheader("Ce que l'on retient")
+    st.markdown(
+        "- Le **texte** est la modalité la plus discriminante dans le cadre étudié\n"
+        "- **XGBoost** est le meilleur modèle global parmi ceux testés\n"
+        "- Les **images** apportent une valeur complémentaire réelle\n"
+        "- Le déséquilibre de classes peut être correctement géré avec un **F1-score pondéré**\n"
+        "- La qualité des données reste un levier majeur d'amélioration"
+    )
+
+with right:
+    st.subheader("Perspectives d'amélioration")
+    st.markdown(
+        "- Construire un vrai modèle **multimodal texte + image**\n"
+        "- Tester des modèles de langage pré-entraînés comme **BERT**\n"
+        "- Faire du **fine-tuning** d'EfficientNetB0\n"
+        "- Réentraîner sur un plus grand volume d'images\n"
+        "- Approfondir LIME et Grad-CAM\n"
+        "- Mieux traiter le multilingue"
+    )
+
 
 st.subheader("Lien avec la problématique métier")
 st.write(
