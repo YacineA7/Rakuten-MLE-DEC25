@@ -60,9 +60,6 @@ st.markdown(
 Le projet repose sur un jeu de données multimodal issu du challenge Rakuten France.
 Chaque produit peut être décrit à travers deux grandes sources d’information :
 
-- **Données textuelles** : une **désignation** (titre du produit) et une **description** plus détaillée ;
-- **Données visuelles** : une **image produit** associée à l’article ;
-- **Variable cible** : un **code type produit** (`prdtypecode`) correspondant à la catégorie à prédire.
 
 Le corpus global contient environ **99 000 produits**, avec des données textuelles d’environ **60 Mo**
 et un volume d’images proche de **2,2 Go**. Dans notre cadre expérimental, les analyses et modèles
@@ -107,7 +104,7 @@ st.markdown("---")
 st.header("3. Exploration des données textuelles")
 
 if img_distrib.exists():
-    st.image(str(img_distrib), use_container_width=True)
+    st.image(str(img_distrib), use_container_width=False, width=700)
     st.markdown(
         """
 **Distribution des classes produits**
@@ -120,7 +117,7 @@ majoritaires, ce qui justifie l’usage de métriques robustes comme le **F1-sco
     )
 
 if img_wordcloud.exists():
-    st.image(str(img_wordcloud), use_container_width=True)
+    st.image(str(img_wordcloud), use_container_width=False, width=700)
     st.markdown(
         """
 **Nuage de mots des titres produits**
@@ -195,7 +192,7 @@ les risques d’erreurs lors du prétraitement ou de la prédiction.
         )
 
 if img_filesize.exists():
-    st.image(str(img_filesize), use_container_width=True)
+    st.image(str(img_filesize), use_container_width=False, width=700)
     st.markdown(
         """
 **Distribution de la taille des fichiers images**
@@ -207,7 +204,7 @@ feature du modèle, elle donne une indication utile sur l’hétérogénéité d
     )
 
 if img_grid.exists():
-    st.image(str(img_grid), use_container_width=True)
+    st.image(str(img_grid), use_container_width=False, width=700)
     st.markdown(
         """
 **Exemples d’images par catégorie**

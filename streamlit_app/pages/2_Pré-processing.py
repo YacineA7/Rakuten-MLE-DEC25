@@ -43,7 +43,7 @@ st.markdown(
     """
 Les données textuelles du projet proviennent des colonnes **`designation`** et **`description`**.
 Le rapport final montre que la **désignation** constitue la source textuelle la plus fiable,
-car la colonne **description** contient une part importante de valeurs manquantes ou vides. [file:101]
+car la colonne **description** contient une part importante de valeurs manquantes ou vides.
 
 Le nettoyage textuel vise donc à :
 - supprimer les éléments non informatifs,
