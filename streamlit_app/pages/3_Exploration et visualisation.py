@@ -1,11 +1,14 @@
 from pathlib import Path
 import streamlit as st
+import pandas as pd
 
 st.set_page_config(page_title="EDA", page_icon="📊", layout="centered")
 
 ROOT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = ROOT_DIR.parent.parent
 FIGURES_DIR = PROJECT_ROOT / "reports" / "figures"
+DICT_PATH = PROJECT_ROOT / "data" / "dictionnaire.csv"
+
 
 
 TEXT_VIZ = [
@@ -57,6 +60,37 @@ for filename, title, comment in TEXT_VIZ:
 st.markdown("## Visualisations image")
 for filename, title, comment in IMAGE_VIZ:
     show_figure(FIGURES_DIR / filename, title, comment)
+
+
+if DICT_PATH.exists():
+    df_dict = pd.read_csv(DICT_PATH)
+
+    # Harmonisation minimale des noms de colonnes
+    df_dict.columns = [c.strip().lower() for c in df_dict.columns]
+
+    # Exemple attendu : prdtypecode + designation/libelle/categorie
+    possible_label_cols = ["categorie", "libelle", "label", "designation", "type"]
+
+    label_col = next((c for c in possible_label_cols if c in df_dict.columns), None)
+
+    if "prdtypecode" in df_dict.columns and label_col is not None:
+        df_affichage = (
+            df_dict[["prdtypecode", label_col]]
+            .drop_duplicates()
+            .sort_values("prdtypecode")
+            .rename(columns={label_col: "catégorie"})
+        )
+
+        with st.expander("Voir le dictionnaire des catégories"):
+            st.write(df_dict)
+    else:
+        st.warning(
+            "Le fichier dictionnaire.csv a été trouvé, mais il doit contenir au moins "
+            "une colonne 'prdtypecode' et une colonne de libellé "
+            "(ex. categorie, libelle, label, designation)."
+        )
+else:
+    st.info("Fichier introuvable : ajoute 'data/dictionnaire.csv' dans le projet.")
 
 st.markdown("## Lecture métier")
 st.write(
