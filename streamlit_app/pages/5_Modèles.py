@@ -125,19 +125,18 @@ with conf_tabs[5]:
     )
 
 with conf_tabs[6]:
-    c1, c2 = st.columns(2, gap="large")
-    with c1:
-        show_confusion_matrix(
-            "viz_img_ENB_confusion.png",
-            "EfficientNetB0 - matrice de confusion",
-            "La matrice montre la capacité du modèle image à distinguer les classes visuellement marquées, malgré un entraînement limité."
-        )
-    with c2:
-        show_confusion_matrix(
-            "viz_img_ENB_courbes.png",
-            "EfficientNetB0 - courbes d'entraînement",
-            "Les courbes permettent de suivre la convergence du modèle et d'évaluer l'absence de surapprentissage visible sur les epochs étudiées."
-        )
+
+    show_confusion_matrix(
+        "viz_img_ENB_confusion.png",
+        "EfficientNetB0 - matrice de confusion",
+        "La matrice montre la capacité du modèle image à distinguer les classes visuellement marquées, malgré un entraînement limité."
+    )
+
+    show_confusion_matrix(
+        "viz_img_ENB_courbes.png",
+        "EfficientNetB0 - courbes d'entraînement",
+        "Les courbes permettent de suivre la convergence du modèle et d'évaluer l'absence de surapprentissage visible sur les epochs étudiées."
+    )
 
 st.markdown("## Lecture métier")
 st.write(
