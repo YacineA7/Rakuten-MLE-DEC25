@@ -106,7 +106,7 @@ le **texte** (désignation, description) et l’**image produit**.
 Nous avons structuré l’étude en plusieurs étapes : **exploration des données**, **préprocessing**,
 **modélisation classique sur le texte**, **deep learning sur les images**, puis **analyse métier**
 des résultats. L’objectif de cette application est de rendre ces travaux lisibles, interactifs et
-exploitables dans une logique de démonstration et de PoC.
+exploitables.
 """
     )
     st.markdown('</div>', unsafe_allow_html=True)
@@ -185,7 +185,7 @@ with c1:
 
 with c2:
     st.markdown('<div class="section-card">', unsafe_allow_html=True)
-    st.subheader("🚀 Ce que permet l’application")
+    st.subheader("🚀 Ce que permet ce streamlit")
     st.markdown(
         "- Explorer les données et les visualisations clés\n"
         "- Comprendre les choix de preprocessing\n"
@@ -197,5 +197,6 @@ with c2:
 
 
 st.caption(
-    "Application de soutenance Streamlit du projet Rakuten - classification multimodale de produits e-commerce."
+    "Application de soutenance Streamlit du projet Rakuten - classification multimodale de produits e-commerce.\n"
+    "Par AOUFI Mohammed Yacine et BOUDINA Hakim"
 )

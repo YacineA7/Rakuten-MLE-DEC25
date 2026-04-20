@@ -24,6 +24,9 @@ with right:
     st.markdown(
         "- Construire un vrai modèle **multimodal texte + image**\n"
         "- Tester des modèles de langage pré-entraînés comme **BERT**\n"
+        "- Upscalling des images (Résolution, dimensions ...)\n"
+        "- Tester d'autres architectures CNN plus performantes que **EfficientNetB0**\n"
+        "- Avoir à disposition plusieurs images par article\n"
         "- Faire du **fine-tuning** d'EfficientNetB0\n"
         "- Réentraîner sur un plus grand volume d'images\n"
         "- Approfondir LIME et Grad-CAM\n"

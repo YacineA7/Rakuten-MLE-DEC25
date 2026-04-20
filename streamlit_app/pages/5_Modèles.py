@@ -25,7 +25,7 @@ with col1:
 with col2:
     st.markdown(
         "### Modèles optimisés\n"
-        "- **SVM linéaire** : très performant sur texte et intéressant pour l'interprétabilité.\n"
+        "- **SVM linéaire** : très performant sur texte et intéressant pour l'interprétabilité. Inadapté aux très grands datasets.\n"
         "- **XGBoost** : meilleur score global grâce à une modélisation plus complexe des interactions."
     )
 with col3:

@@ -22,6 +22,9 @@ IMAGE_VIZ = [
     ("viz_image_dimensions.png", "Dimensions des images", "Confirme l'homogénéité du dataset image, avec un format uniforme facilitant le preprocessing."),
     ("viz_image_modes.png", "Modes colorimétriques des images", "Vérifie la cohérence des canaux et limite les besoins de conversion complexes."),
     ("viz_image_filesize.png", "Distribution de la taille des fichiers", "Donne une vue d'ensemble sur le poids des images et la variabilité de compression."),
+    ("viz_img_contrast.png", "Contraste des images", "Détection des zones clair et sombres.(Contraste moyen des images = 67,4)"),
+    ("viz_img_brillance.png", "Brillance des images", "Analyse la luminosité et la brillance des images.(Brillance moyenne = 189)"),
+    ("viz_img_blur.png", "Flou des images", "Score d'analyse de la qualité visuelle. Un score elevé signifie grosse variabilité de qualité d'image. (Moyenne de netteté de 150 dans le dataset, indiquant une bonne qualité d'image moyenne, le seuil étant à 100.) "),
     ("viz_image_grid.png", "Grille d'images échantillon", "Permet une inspection qualitative rapide de la diversité visuelle des produits."),
 ]
 
